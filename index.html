@@ -1,0 +1,786 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Wprowadzenie do ReactJS</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500" rel="stylesheet">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img class="header__image" src="http://angular.github.io/react-native-renderer/assets/react.png" />
+					<h1 class="header">
+						Wprowadzenie do ReactJS
+					</h1>
+					<p>
+						czyli jak łatwo stworzyć aplikację SPA
+					</p>
+					<aside class="notes"></aside>
+				</section>
+
+				<section>
+					<section>
+						<img  src="https://chilid.com/assets/images/logos/logo-chilid-blackish.svg" />
+						<aside class="notes"></aside>
+					</section>
+					<section>
+						<div class="image--circle">
+							<img src="https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/10426625_918715134820645_1822446987327838889_n.jpg?oh=2630b4405a804e2e47167e0a01e046f6&oe=59C7D855"/>
+						</div>
+						<h3 class="header header--small">Sebastian Musiał</h3>
+						<ul class="list">
+							<li>Pracuje w Chilid od ponad 3 lat</li>
+							<li>Miłośnik czystego kodu i nowych techonologii</li>
+							<li>Zdarzało mu się pisać w AngularJS, React + Redux</li>
+							<li>Uwielbia jazdę na motocyklu i sport - piłka nożna, sztuki walki, jazdę na rolkach</li>
+							<li>Wierny kibic Arsenalu</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<img class="header__image" src="http://angular.github.io/react-native-renderer/assets/react.png" />
+						<h2 class="header">React</h2>
+					</section>
+					<section>
+						<h3 class="header">Strong community 💪</h3>
+						<aside class="notes">
+							React.js jest obecnie używany na stronach internetowych firm takich jak Netflix, Imgur, PayPal, Archive.org, Gamepedia, SeatGeek, HelloSign czy Walmart. 
+							
+							W 2015 roku React.js i React Native były dwoma najpopularniejszymi otwartymi projektami na stronie GitHub React jest także 5. najpopularniejszym projektem na GitHub (dane na styczeń 2017).
+						</aside>
+					</section>
+					<section>
+						<div class="inline-block inline-block--logos">
+							<img class="header__image--logos" src="https://d2ygrtdi28m8fp.cloudfront.net/corporateAssets/Netflix_Logo_DigitalVideo_0701.jpg" />
+							<img class="header__image--logos" src="http://cdn.embed.ly/providers/logos/imgur.png" />
+							<img class="header__image--logos" src="https://newsroom.mastercard.com/eu/files/2016/09/paypal-logo.png" />
+						</div>
+						<aside class="notes">
+							// TODO
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<img class="header__image" src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" />
+						<h2 class="header">Redux</h2>
+					</section>
+					<section>
+						<img class="header__image" src="http://angular.github.io/react-native-renderer/assets/react.png" />
+						<h3 class="header header--between"> + </h3>
+						<p>
+							<img class="header__image" src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" />
+						</p>
+						<aside class="notes">
+							// TODO
+						</aside>
+					</section>
+					<section>
+						<img class="header__image header__image--big" src="https://onsen.io/blog/content/images/2016/Jun/react_redux.png" />
+						<aside class="notes">
+							// TODO
+						</aside>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h3 class="header">
+							Rozstawienie środowiska
+						</h3>
+					</section>
+					<section>
+						<img class="header__image" src="https://camo.githubusercontent.com/afe4da8c5d6a958841310e53519d85a94aab8036/687474703a2f2f6769742d73636d2e636f6d2f696d616765732f6c6f676f732f646f776e6c6f6164732f4769742d4c6f676f2d32436f6c6f722e706e67" />
+						<pre>
+							<code class="bash" data-trim data-noescape>
+								git clone git@github.com:xsolve-pl/react-intro.git
+							</code>
+						</pre>
+						<aside class="notes">
+							Na początku klonujemy repozytorium.
+							W przypadku problemów proszę pobrać repozytorium lub sprobowac pobrac przez https.
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Zainstalowanie modułów
+						</h3>
+						<pre>
+							<code class="Bash" data-trim data-noescape>
+								npm install
+							</code>
+						</pre>
+						<aside class="notes">
+							Intalujemy wszystkie node_modules
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Uruchomienie aplikacji
+						</h3>
+						<pre>
+							<code class="Bash" data-trim data-noescape>
+								npm start
+							</code>
+						</pre>
+						<aside class="notes">
+							Uruchomienie aplikacji
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Struktura aplikacji
+						</h3>
+						<aside class="notes">
+							Krótki wstęp omawiający strukturę aplikacji.
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Podstawowa podział plików
+						</h3>
+						// TODO: fotka
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Struktura komponentu
+						</h3>
+						<aside class="notes">
+							Krótki wstęp omawiający strukturę komponentów.
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Importowanie modułów i komponentów
+						</h3>
+						<pre>
+							<code data-trim data-noescape>
+								import React, { Component } from 'react'
+								import * as firebase from 'firebase'
+
+								import { backgroundImage } from '../../images'
+								import { Button } from './../../components/Button'
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Tworzenie komponentu
+						</h3>
+						<pre>
+							<code data-trim data-noescape class="javascript">
+							export default class LoginComponent extends Component {
+								constructor(props) {
+									super(props);
+									
+									this.state = {
+										email: ' ',
+										password: ' ',
+									}
+								}
+
+								handleChange(event) {
+									this.setState({email: event.target.value});
+								}
+							}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Renderowanie widoku
+						</h3>
+						<pre>
+							<code data-trim data-noescape class="javascript">
+							export default class HelloWorld extends Component {
+								...
+								render() {
+									return (
+										&lt;div&gt;
+											&lt;input 
+												value={this.state.email}
+												onChange={this.handleChange.bind(this)} 
+											/&gt;
+											Hello { this.state.email }
+										&lt;/div&gt;
+									)
+								}
+							}
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Podstawowe akcje
+						</h3>
+						<aside class="notes">
+							Przedstawienie kilku podstawowych akcji.
+							https://facebook.github.io/react/docs/handling-events.html
+							Pamiejamy: "binding is necessary to make `this` work in the callback"
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							onClick
+						</h3>
+						<pre><code data-trim data-noescape class="javascript">
+							&lt;button <mark>onClick="this.handleClick.bind(this)"</mark>&gt;
+								Wyślij widomość
+							&lt;/button&gt;
+						</code></pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							onChange
+						</h3>
+						<pre><code data-trim data-noescape class="javascript">
+							&lt;input 
+								value={this.state.email}
+								<mark>onChange={this.handleChange.bind(this)}</mark>
+							/&gt;
+						</code></pre>
+					</section>
+				</section>
+
+
+				<section>
+					<section>
+						<h3 class="header">
+							Zadanie 1
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Tworzenie nowego komponentu
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Zaimportuj komponent o nazwie From
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/App/App.js
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodaj zmienną <b>message</b> oraz metodę <b>handleChange</b><br>
+							aktualizującą zmienną pod wpywm zmian<br>
+							wprowadzanych w polu tekstowym
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Wypisz zmienną <b>message</b> na ekranie
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Listy
+						</h3>
+						<aside class="notes">
+							https://facebook.github.io/react/docs/lists-and-keys.html
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Wyświetlanie listy
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							const numbers = [1, 2, 3, 4, 5];
+						</code></pre>
+						<pre><code data-trim data-noescape class="javascript">
+							{ numbers.map((value, index) =>
+								&lt;div key={index}&gt;
+									{ value }
+								&lt;/div&gt;
+							)}
+						</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Zadanie 2
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Tworzenie listy wiadomości
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodaj do zmiennych pole <b>userName</b> ze swoim imieniem<br>
+							oraz tablicę o nazwie <b>list</b>
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodaj metodę <b>handleSend</b>, która będzie odpowiadała<br>
+							za dodawanie wiadomości do listy
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
+						<code data-trim data-noescape class="javascript">
+							// Struktura wysyłanego obiektu:
+							{
+								userName: 'Sebastian',
+								message: 'Nowa wiadomość',
+							}
+						</code>
+						</pre>
+						<aside class="notes">
+							Nalezy pamiętać o sprawdzaniu czy wiadomość nie jest pusta przy wysyłaniu oraz o wyczyszczeniu pola po wsyłaniu wiadomości. 
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Wyświetl wszystkie wysłane wiadomości
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
+						<code data-trim data-noescape class="javascript">
+							// Pomocnicza struktura pojedynczej wiadomości
+							&lt;div key={index} className="form__item"&gt;
+								&lt;span className="form__user"&gt;
+									// autor wiadomości
+								&lt;/span&gt;
+								// wiadomość
+							&lt;/div&gt;
+						</code>
+						</pre>
+						<aside class="notes">
+							Nalezy pamiętać o sprawdzaniu czy wiadomość nie jest pusta przy wysyłaniu oraz o wyczyszczeniu pola po wsyłaniu wiadomości. 
+						</aside>
+					</section>
+				</section>
+				
+				<section>
+					<h3 class="header">
+						🍔 <br>
+						Przerwa 
+					</h3>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Zarządzanie danymi
+						</h3>
+						<aside class="notes">
+							Dzielenie kodu na mniejsze kawałki i przekazywanie zmiennych do innych komponentów.
+							https://facebook.github.io/react/docs/components-and-props.html
+							Wtyczka do chrome: React Developer Tools
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Przekazanie zmiennych do komponentu
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							constructor() {
+								this.state = {
+									name: 'Sebastian',
+								}
+							}
+						</code></pre>
+						<pre><code data-trim data-noescape class="javascript">
+							&lt;div class="list"&gt;
+								&lt;UserItem 
+									user={ this.state.name }
+									text={ 'Witam na warsztatach' }
+								/&gt;
+							&lt;/div&gt;
+						</code></pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Odczytanie otrzymanych danych
+						</h3>
+						<pre>
+							<code data-trim data-noescape class="javascript">
+							export default class UserItem extends Component {
+								render() {
+									return (
+										&lt;div&gt;
+											Hello { this.props.name }!
+											&lt;Message text={this.props.text} /&gt;
+										&lt;/div&gt;
+									)
+								}
+							}
+							</code>
+						</pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h3 class="header">
+							Zadanie 3
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Tworzenie komponentu wiadomości
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Uwórz nowy komponent <b>Message</b> i przenieś kod<br>
+							odpowiadający za wyświetlanie pojedynczej wiadomości
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Message/Message.js
+						</code> <code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Message/Message.css
+						</code>
+						</pre>
+						<aside class="notes">
+							Uwótrz dla pliki Message.js i Message.css i uporządkuj odopowiednio kod. 
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Przenieś style oraz popraw nazewnictwo.<br>
+							Proponowana struktura HTML komponentu: 
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							&lt;div key={index} className="message"&gt;
+								&lt;span className="message__author"&gt;
+									// autor wiadomości
+								&lt;/span&gt;
+								// wiadomość
+							&lt;/div&gt;
+						</code>
+						</pre>
+						<aside class="notes">
+							Uwótrz dla pliki Message.js i Message.css i uporządkuj odopowiednio kod. 
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<img class="header__image" src="images/firebase-logo.png" />
+						<h2 class="header">Firebase</h2>
+					</section>
+					<section>
+						<img class="header__image header__image--big" src="images/firebase-capabilities.png" />
+					</section>
+					<section>
+						<img class="header__image header__image--big" src="images/firebase-schema.png" />
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Konfiguracja firebase
+						</h3>
+						<img class="header__image header__image--big" src="images/firebase-database.png" />
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Metody logowania
+						</h3>
+						<img class="header__image header__image--big" src="images/firebase-logowanie.png" />
+						<aside class="notes">
+							Uwierzytelnianie działa przy uzyciu standardów OAuth 2.0 oraz OpenID. 
+							Firebase ustępnia bardzo proste w uzyciu API do rejestracji i logowania.
+							Na zdjęciu widac dostępne metody logowania. W naszej aplikacji posłuzylismy się standardową metodą: email/hasło.
+							W innych przypadkach nalezy miec dodatkowo konto developerskie (serwer autoryzacyjny) w danej platformie (np. facebook, twitter).
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Instalacja firebase
+						</h3>
+						<pre>
+							<code data-trim data-noescape class="javascript">
+								npm install firebase --save
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Konfiguracja firebase
+						</h3>
+						<pre>
+							<code data-trim data-noescape>
+								export const firebaseConfig = {
+									apiKey: "AIzaSyBsX1M9rZJxxlPyt8GpJz4oN0GT-1wXtfk",
+									authDomain: "xlab-react.firebaseapp.com",
+									databaseURL: "https://xlab-react.firebaseio.com",
+									projectId: "xlab-react",
+									storageBucket: "xlab-react.appspot.com",
+									messagingSenderId: "113610200437"
+								}
+							</code
+						></pre>
+						<aside class="notes">
+							Dane konfiguracyjne firebase. Kazda aplikacja w firebase posiada wlasne unikalne dane, ktore odczytuje sie z panelu firebase. 
+							Mozna stworzyc własne konto w firebase i podpiąc wlasne dane.
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Konfiguracja firebase
+						</h3>
+						<pre>
+							<code data-trim data-noescape>
+								import { firebaseConfig } from './config'
+
+								const firebaseApp = firebase.initializeApp(firebaseConfig);
+							</code>
+						</pre>
+						<aside class="notes">
+							Wczytanie obiektu z konfiguracjami firebase.
+							Inicjalizacja firebase na podstawie pobranego obiektu.
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							firebase API - authentication
+						</h3>
+						<pre>
+							<code data-trim data-noescape class="javascript">
+								firebase.auth().onAuthStateChanged(userData => {
+									if (userData) {
+										// użytkownik jest zalogowany
+										console.log(userData)
+									} else {
+										// użytkownik nie jest zalogowany
+									}
+								})
+							</code>
+						</pre>
+						<aside class="notes">
+							Przykład odnoszący się do standardowej akcji udostępnionej w firebase - sprawdzenia czy uytkownik jest zalogowany.
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Firebase API - database
+						</h3>
+						<pre><code data-trim data-noescape class="javascript">
+							this.roomRef = firebase.database().ref().child('rooms')
+						</code></pre>
+						<pre><code data-trim data-noescape class="javascript">
+							this.roomRef.on('value', rooms => {
+								console.log(rooms);
+
+								rooms.forEach((item) => {
+									console.log(item.val());
+								});
+							});
+						</code></pre>
+						<pre><code data-trim data-noescape class="javascript">
+							this.roomRef.push({
+								name: 'Nazwa nowego pokoju',
+							}).then(data => {
+								// Akcja została wykonana poprawnie
+							})
+						</code></pre>
+						<aside class="notes">
+							Pierwszy fragment kodu odnosi się do pozyskania referencji obiektu z listą pokojów. Warto umieścic go w konstruktorze, aby był widoczny w przedstrzeni całego komponentu.
+							<br><br>
+							Drugi fragment kodu odnosi się do pobrania wszystkich pokojów i wyświetlenia w konsoli wartości. Działamy tutaj na zapisanej wczęsniej referencji odnoszącej się do obiektu 'rooms' z bazy danych firebase. 
+							Otrzymywane dane są w postaci obiektów.
+							<br><br>
+							Trzeci fragment odnosi się do dodawania wartości do bazy danym. Tutaj równiez pracuje się na zapisanej do zmiennej wcześniej refencji.
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Zadanie 4
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Integracja aplikacji z firebase
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodanie w konstruktorze referencji do bazy danych:
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							this.messageRef = firebase.database().ref().child('messages');
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodawanie obiektu do bazy danych.<br>
+							Zmiana metody <b>handleSend</b> w pliku:
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodanie metody <b>listenMessages</b> w pliku:
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							listenMessages() {
+							    this.messageRef
+									.limitToLast(10)
+									.on('value', message => {
+										this.setState({
+											list: Object.values(message.val()),
+										});
+									});
+							}
+						</code>
+						</pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h3 class="header header--small">
+							🚀
+							<br><br>
+							Teraz możesz przejść<br>
+							do napisania włanej aplikacji SPA
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Zajarani? 🔥 <br>
+							A to nie wszystko! 
+						</h3>
+						<ul class="list">
+							<li>
+								<a href="https://facebook.github.io/react-native/">React Native - www.facebook.github.io/react-native</a>
+							</li>
+							<li>
+								<a href="https://facebook.github.io/react-vr/">React VR - www.facebook.github.io/react-vr</a>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Więcej info na 📖
+						</h3>
+						<ul class="list">
+							<li>
+								<a href="https://facebook.github.io/react/">https://facebook.github.io/react/</a>
+							</li>
+							<li>
+								<a href="https://github.com/reactjs/redux">https://github.com/reactjs/redux</a>
+							</li>
+							<li>
+								<a href="https://www.codeschool.com/courses/powering-up-with-react">https://www.codeschool.com/courses/powering-up-with-reacte</a>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							 🎉🎉🎉
+							<br><br>
+							Dziękuję za uwagę!
+						</h3>
+					</section>
+				</section>
+			</div>
+			<div class="floating-footer">
+				<div class="logo">
+					<div class="logo__item">
+						<img src="images/chilid.png" />
+					</div>
+					<div class="logo__item">
+						<img src="images/xs-logo.svg" />
+					</div>
+				</div>
+				<p>
+					React od podszewki
+				</p>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
