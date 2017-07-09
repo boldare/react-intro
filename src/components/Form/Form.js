@@ -13,8 +13,9 @@ export default class Form extends Component {
             list: [],
         }
         
-        this.messageRef = firebase.database().ref().child('messages');
-        this.listenMessages();
+        // TODO: 1. Dodanie referencji do bazy danych
+
+        // TODO: 4. Wywołaj metodę listenMessages
     }
 
     handleChange(event) {
@@ -28,8 +29,13 @@ export default class Form extends Component {
                 message: this.state.message,
             }
 
-            this.messageRef.push(newItem);
-            this.setState({ message: '' });
+            // TODO: 2. Dodanie wiadomości do bazy danych
+            // zmiana logiki dodawania wiadomości
+
+            this.setState({ 
+                message: '',
+                list: [...this.state.list, newItem],
+            });
         }
     }
 
@@ -38,15 +44,7 @@ export default class Form extends Component {
         this.handleSend();
     }
 
-    listenMessages() {
-        this.messageRef
-            .limitToLast(10)
-            .on('value', message => {
-                this.setState({
-                    list: Object.values(message.val()),
-                });
-            });
-    }
+    // TODO: 3. Dodaj metodę listenMessages
 
     render() {
         return (
