@@ -3,31 +3,27 @@ import './Form.css';
 import firebase from 'firebase';
 
 export default class Form extends Component {
-    constructor(props) {
-        super(props);
+    // TODO: 3. Dodaj konstruktor ze zmienną "message"
 
-        this.state = {
-            message: '',
-        }
-    }
-
-    handleChange(event) {
-        this.setState({message: event.target.value});
-    }
-
+    // TODO: 4. Dodaj metodę "handleChange"
     render() {
         return (
             <div className="form">
                 <div className="form__message">
-                    { this.state.message }
+                    {/*
+                        TODO: 6. Wyświetl wartość zmiennej message
+                    */}
                 </div>
                 <div className="form__row">
+                    {/* 
+                        TODO: 5. Połącz metodę "handleChange"
+                        z polem tekstowym
+                    */}
                     <input 
                         className="form__input"
                         type="text"
                         placeholder="Type message"
                         value={this.state.message}
-                        onChange={this.handleChange.bind(this)}
                     />
                     <button 
                         className="form__button"
