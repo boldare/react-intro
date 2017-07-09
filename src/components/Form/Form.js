@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Form.css';
-import Message from '../Message/Message';
 import firebase from 'firebase';
 
 export default class Form extends Component {
@@ -12,10 +11,6 @@ export default class Form extends Component {
             message: '',
             list: [],
         }
-        
-        // TODO: 1. Dodanie referencji do bazy danych
-
-        // TODO: 4. Wywołaj metodę listenMessages
     }
 
     handleChange(event) {
@@ -29,9 +24,6 @@ export default class Form extends Component {
                 message: this.state.message,
             }
 
-            // TODO: 2. Dodanie wiadomości do bazy danych
-            // zmiana logiki dodawania wiadomości
-
             this.setState({ 
                 message: '',
                 list: [...this.state.list, newItem],
@@ -44,14 +36,20 @@ export default class Form extends Component {
         this.handleSend();
     }
 
-    // TODO: 3. Dodaj metodę listenMessages
-
     render() {
         return (
             <div className="form">
                 <div className="form__message">
                     { this.state.list.map((item, index) =>
-                        <Message key={index} message={item} />
+                        <div 
+                            key={index}
+                            className="form__item"
+                        >
+                            <span className="form__user">
+                                { item.userName }:
+                            </span>                                
+                            { item.message }
+                        </div>
                     )}
                 </div>
                 <div className="form__row">
