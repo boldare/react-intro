@@ -17,6 +17,9 @@ export default class Form extends Component {
         this.listenMessages();
     }
 
+    // TODO: 7. Dodaj metodę componentWillReceiveProps
+    // uaktualnij w niej nazwę użytkownika
+ 
     handleChange(event) {
         this.setState({message: event.target.value});
     }

@@ -9,6 +9,11 @@ firebase.initializeApp(firebaseConfig);
 
 class App extends Component {
   render() {
+    // TODO: 1. Dodaj konstruktor ze zmienną user
+
+    // TODO: 2. Dodaj metodę componentDidMount,
+    // sprawdź czy uzytkownik jest zalogowany
+    
     return (
       <div className="app">
         <div className="app__header">
@@ -16,8 +21,17 @@ class App extends Component {
           <h2>
             SIMPLE APP WITH REACT
           </h2>
+
+          {/* TODO: 3. Dodaj button logowania */}
+
+          {/* TODO: 4. Dodaj button wylogowania */}
+
+          {/* TODO: 5. Zastosuj dla buttonów renderowanie warunkowe */}
+
         </div>
         <div className="app__list">
+          
+          {/* TODO: 6. Przekaż zmienną user do koponentu */}
           <Form />
         </div>
       </div>
