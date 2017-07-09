@@ -12,10 +12,6 @@ export default class Form extends Component {
             message: '',
             list: [],
         }
-        
-        // TODO: 1. Dodanie referencji do bazy danych
-
-        // TODO: 4. Wywołaj metodę listenMessages
     }
 
     handleChange(event) {
@@ -29,9 +25,6 @@ export default class Form extends Component {
                 message: this.state.message,
             }
 
-            // TODO: 2. Dodanie wiadomości do bazy danych
-            // zmiana logiki dodawania wiadomości
-
             this.setState({ 
                 message: '',
                 list: [...this.state.list, newItem],
@@ -43,8 +36,6 @@ export default class Form extends Component {
         if (event.key !== 'Enter') return;
         this.handleSend();
     }
-
-    // TODO: 3. Dodaj metodę listenMessages
 
     render() {
         return (
