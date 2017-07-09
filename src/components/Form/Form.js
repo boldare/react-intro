@@ -8,8 +8,6 @@ export default class Form extends Component {
 
         this.state = {
             message: '',
-            // TODO: 1. Dodaj pole "userName"
-            // Dodaj pustą tablice o nazwie "list"
         }
     }
 
@@ -17,19 +15,11 @@ export default class Form extends Component {
         this.setState({message: event.target.value});
     }
 
-    // TODO: 2. Dodaj metodę handleSend
-    // połącz akcję z przyciskiem send
-
-    // TODO: 3. Dodaj metodę handleKeyPress
-    // dodaj wiadomości po naciśnięciu klawisza enter
-
     render() {
         return (
             <div className="form">
                 <div className="form__message">
-
-                    {/* TODO: 4. Wyświetl wszystkie wysłane wiadomości */}
-
+                    { this.state.message }
                 </div>
                 <div className="form__row">
                     <input 
