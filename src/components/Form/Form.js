@@ -40,6 +40,10 @@ export default class Form extends Component {
         return (
             <div className="form">
                 <div className="form__message">
+                    {/* 
+                        TODO: Utwórz nowy komponent "Message"
+                        Dokonaj zmian w wyświetlaniu listy wiadomości.
+                     */}
                     { this.state.list.map((item, index) =>
                         <div 
                             key={index}
