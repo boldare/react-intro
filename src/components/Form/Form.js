@@ -7,9 +7,9 @@ export default class Form extends Component {
         super(props);
 
         this.state = {
-            userName: 'Sebastian',
             message: '',
-            list: [],
+            // TODO: 1. Dodaj pole "userName"
+            // Dodaj pustą tablice o nazwie "list"
         }
     }
 
@@ -17,40 +17,19 @@ export default class Form extends Component {
         this.setState({message: event.target.value});
     }
 
-    handleSend() {
-        if (this.state.message) {
-            var newItem = {
-                userName: this.state.userName,
-                message: this.state.message,
-            }
+    // TODO: 2. Dodaj metodę handleSend
+    // połącz akcję z przyciskiem send
 
-            this.setState({ 
-                message: '',
-                list: [...this.state.list, newItem],
-            });
-        }
-    }
-
-    handleKeyPress(event) {
-        if (event.key !== 'Enter') return;
-        this.handleSend();
-    }
+    // TODO: 3. Dodaj metodę handleKeyPress
+    // dodaj wiadomości po naciśnięciu klawisza enter
 
     render() {
         return (
             <div className="form">
                 <div className="form__message">
-                    { this.state.list.map((item, index) =>
-                        <div 
-                            key={index}
-                            className="form__item"
-                        >
-                            <span className="form__user">
-                                { item.userName }:
-                            </span>                                
-                            { item.message }
-                        </div>
-                    )}
+
+                    {/* TODO: 4. Wyświetl wszystkie wysłane wiadomości */}
+
                 </div>
                 <div className="form__row">
                     <input 
@@ -59,11 +38,9 @@ export default class Form extends Component {
                         placeholder="Type message"
                         value={this.state.message}
                         onChange={this.handleChange.bind(this)}
-                        onKeyPress={this.handleKeyPress.bind(this)}
                     />
                     <button 
                         className="form__button"
-                        onClick={this.handleSend.bind(this)}
                     >
                         send
                     </button>
