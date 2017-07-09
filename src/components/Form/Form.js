@@ -17,12 +17,6 @@ export default class Form extends Component {
         this.listenMessages();
     }
 
-    componentWillReceiveProps(nextProps) {
-        if(nextProps.user) {
-            this.setState({'userName': nextProps.user.displayName});
-        }
-    }
-
     handleChange(event) {
         this.setState({message: event.target.value});
     }
