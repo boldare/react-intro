@@ -17,6 +17,12 @@ export default class Form extends Component {
         this.listenMessages();
     }
 
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.user) {
+            this.setState({'userName': nextProps.user.displayName});
+        }
+    }
+
     handleChange(event) {
         this.setState({message: event.target.value});
     }
@@ -31,6 +37,11 @@ export default class Form extends Component {
             this.messageRef.push(newItem);
             this.setState({ message: '' });
         }
+    }
+
+    handleKeyPress(event) {
+        if (event.key !== 'Enter') return;
+        this.handleSend();
     }
 
     listenMessages() {
@@ -57,7 +68,8 @@ export default class Form extends Component {
                         type="text"
                         placeholder="Type message"
                         value={this.state.message}
-                        onChange={this.handleChange.bind(this)} 
+                        onChange={this.handleChange.bind(this)}
+                        onKeyPress={this.handleKeyPress.bind(this)}
                     />
                     <button 
                         className="form__button"

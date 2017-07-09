@@ -9,7 +9,6 @@
 
 .app__header {
   background-color: #222;
-  height: 150px;
   padding: 20px;
   color: white;
 }
@@ -23,6 +22,21 @@
   max-width: 600px;
   padding: 20px;
   margin: 0 auto;
+}
+
+.app__button {
+  border: 0;
+  border-radius: 0;
+  padding: 10px 20px;
+  color: black;
+  background-color: white;
+  cursor: pointer;
+  opacity: .8;
+  outline: 0;
+}
+
+.app__button:hover {
+  opacity: 1;
 }
 
 @keyframes App-logo-spin {
