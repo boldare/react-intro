@@ -26,7 +26,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<img class="header__image" src="http://angular.github.io/react-native-renderer/assets/react.png" />
+					<img class="header__image" src="images/img-react1.png" />
 					<h1 class="header">
 						Wprowadzenie do ReactJS
 					</h1>
@@ -38,12 +38,12 @@
 
 				<section>
 					<section>
-						<img  src="https://chilid.com/assets/images/logos/logo-chilid-blackish.svg" />
+						<img  src="images/logo-chilid-blackish.svg" />
 						<aside class="notes"></aside>
 					</section>
 					<section>
 						<div class="image--circle">
-							<img src="https://scontent-bru2-1.xx.fbcdn.net/v/t1.0-9/10426625_918715134820645_1822446987327838889_n.jpg?oh=2630b4405a804e2e47167e0a01e046f6&oe=59C7D855"/>
+							<img src="images/avatar-sebastian.jpg"/>
 						</div>
 						<h3 class="header header--small">Sebastian Musiał</h3>
 						<ul class="list">
@@ -58,7 +58,7 @@
 
 				<section>
 					<section>
-						<img class="header__image" src="http://angular.github.io/react-native-renderer/assets/react.png" />
+						<img class="header__image" src="images/img-react1.png" />
 						<h2 class="header">React</h2>
 					</section>
 					<section>
@@ -71,35 +71,56 @@
 					</section>
 					<section>
 						<div class="inline-block inline-block--logos">
-							<img class="header__image--logos" src="https://d2ygrtdi28m8fp.cloudfront.net/corporateAssets/Netflix_Logo_DigitalVideo_0701.jpg" />
-							<img class="header__image--logos" src="http://cdn.embed.ly/providers/logos/imgur.png" />
-							<img class="header__image--logos" src="https://newsroom.mastercard.com/eu/files/2016/09/paypal-logo.png" />
+							<img class="header__image--logos" src="images/logo-netflix.jpg" />
+							<img class="header__image--logos" src="images/logo-imgur.png" />
+							<img class="header__image--logos" src="images/paypal-logo.png" />
 						</div>
 						<aside class="notes">
-							// TODO
 						</aside>
 					</section>
 				</section>
 
 				<section>
 					<section>
-						<img class="header__image" src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" />
+						<img class="header__image" src="images/redux.png" />
 						<h2 class="header">Redux</h2>
 					</section>
 					<section>
-						<img class="header__image" src="http://angular.github.io/react-native-renderer/assets/react.png" />
+						<img class="header__image" src="images/img-react1.png" />
 						<h3 class="header header--between"> + </h3>
 						<p>
-							<img class="header__image" src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png" />
+							<img class="header__image" src="images/redux.png" />
 						</p>
 						<aside class="notes">
-							// TODO
+							Wykorzystuje się go w większego typach aplikacji. Pozwala zarządzać stanem aplikacji w prosty i czytelny sposób. Ułatwia organizację kodu.
+							Redux można łączyć m.in z ReactJS. Oczywiście znajduje swoje zastosowanie również w innych frameworkach np. Angular
 						</aside>
 					</section>
 					<section>
-						<img class="header__image header__image--big" src="https://onsen.io/blog/content/images/2016/Jun/react_redux.png" />
+						<img class="header__image header__image--big" src="images/react_redux.png" />
+						<ul class="list">
+							<li>
+								Action - obiekty zawierające informacje o dostępnych akcjach w aplikacji
+							</li>
+							<li>
+								Reducer - funkcje do obsługi zdefiniowanych akcji i aktualizacji stanu aplikacji (store)
+							</li>
+							<li>
+								Store - służy do przechowywania danych i stanów aplikacji
+							</li>
+							<li>
+								View - reprezentowany widok w aplikacji
+							</li>
+						</ul>
 						<aside class="notes">
-							// TODO
+							Store - w aplikacji jest tworzony jeden reduxowy store do trzymania wszystkich danych i stanów aplikacji.
+							Aby zobaczyc stan nalzy wykonac store.getState().
+							Stan aplikacji nigdy nie powinien byc bezposrednio modyfikowany.
+							W tym celu nalezy poslugiwac się wywołaniem akcji: store.dispatch(action) - wywołanie akcji na store w celu zmiany danych.
+
+							Action - obiekty z informacją o typie akcji oraz jej podstawowymi właściwościami.
+
+							Reducer - funkcje do obsługi zdefiniowanych akcji i aktualizacji stanu aplikacji (store)
 						</aside>
 					</section>
 				</section>
@@ -161,9 +182,9 @@
 					</section>
 					<section>
 						<h3 class="header header--small">
-							Podstawowa podział plików
+							Podstawowa struktura aplikacji
 						</h3>
-						// TODO: fotka
+						<img class="header__image header__image--medium" src="images/struktura-aplikacji.png"/>
 					</section>
 				</section>
 
@@ -254,6 +275,11 @@
 							onClick
 						</h3>
 						<pre><code data-trim data-noescape class="javascript">
+							handleClick() {
+								console.log('Click');
+							}
+							</code>
+							<code data-trim data-noescape class="javascript">
 							&lt;button <mark>onClick="this.handleClick.bind(this)"</mark>&gt;
 								Wyślij widomość
 							&lt;/button&gt;
@@ -264,14 +290,175 @@
 							onChange
 						</h3>
 						<pre><code data-trim data-noescape class="javascript">
+							handleChange(event) {
+								this.setState({message: event.target.value});
+							}
+							</code>
+							<code data-trim data-noescape class="javascript">
 							&lt;input 
 								value={this.state.email}
 								<mark>onChange={this.handleChange.bind(this)}</mark>
 							/&gt;
 						</code></pre>
 					</section>
+					<section>
+						<h3 class="header header--small">
+							onKeyPress
+						</h3>
+						<pre><code data-trim data-noescape class="javascript">
+							handleKeyPress(event) {
+								if (event.key !== 'Enter') return;
+								this.handleSend();
+							};
+							</code>
+							<code data-trim data-noescape class="javascript">
+								&lt;input 
+									value={this.state.email}
+									<mark>onKeyPress={this.handleKeyPress.bind(this)}</mark>
+								/&gt;
+							</code>
+						</pre>
+					</section>
 				</section>
 
+				<section>
+					<section>
+						<h3 class="header">
+							Cykl życia komponentu
+						</h3>
+						<aside class="notes">
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Montowanie
+						</h3>
+						<p class="paragraph--small">
+							Metody wykonywane są kiedy komponent jest tworzony<br>
+							i dodawny do drzewa DOM
+						</p>
+						<ul class="list list--clear">
+							<li>
+								constructor()
+							</li>
+							<li>
+								componentWillMount()
+							</li>
+							<li>
+								render()
+							</li>
+							<li>
+								componentDidMount()
+							</li>
+						</ul>
+						<aside class="notes">
+							Metody wywoływane są kiedy komponent jest tworzony i dodawany do drzewa DOM
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Odświeżanie
+						</h3>
+						<p class="paragraph--small">
+							Metody wykonywane są kiedy występują zmiany stanu<br>
+							komponentu luz zmiennych zapisanych w obiekcie this.props
+						</p>
+						<ul class="list list--clear">
+							<li>
+								componentWillReceiveProps()
+							</li>
+							<li>
+								shouldComponentUpdate()
+							</li>
+							<li>
+								componentWillUpdate()
+							</li>
+							<li>
+								render()
+							</li>
+							<li>
+								componentDidUpdate()
+							</li>
+						</ul>
+						<aside class="notes">
+							Metody wykonywane są kiedy występują zmiany stanu<br>
+							komponentu luz zmiennych zapisanych w obiekcie this.props
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Demontowanie
+						</h3>
+						<p class="paragraph--small">
+							Metoda wykonywana kiedy komponent<br>
+							jest usuwany z drzewa DOM
+						</p>
+						<ul class="list list--clear">
+							<li>
+								componentWillUnmount()
+							</li>
+						</ul>
+						<aside class="notes">
+							Metody wykonywane są kiedy występują zmiany stanu<br>
+							komponentu luz zmiennych zapisanych w obiekcie this.props
+						</aside>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Renderowanie warunkowe
+						</h3>
+						<aside class="notes">
+							W widoku mozemy zastosowac warunkowe wyswietlanie fragmentow kodu (if/else).
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Renderowanie z <mark>&&</mark>
+						</h3>
+						<pre><code data-trim data-noescape class="javascript">
+						class Article extends Component {
+							render() {
+								const { title, subtitle } = this.props;
+
+								return (
+									&lt;div&gt;
+										&lt;h1>{title}&lt;/h1&gt;
+										{subtitle && (
+											&lt;h2>{subtitle}&lt;/h2&gt;
+										)}
+									&lt;/div&gt;
+								)
+							}
+						}
+						</code></pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Renderowanie z <mark>?</mark>
+						</h3>
+						<pre><code data-trim data-noescape class="javascript">
+						class Article extends Component {
+							render() {
+								const { title, subtitle } = this.props;
+
+								return (
+									&lt;div&gt;
+										&lt;h1 style={styles.title}>{title}&lt;/h1&gt;
+										{subtitle ? (
+											&lt;h2&gt;{subtitle}&lt;/h2&gt;
+										) : (
+											&lt;h3&gt;No subtitle&lt;/h3&gt;
+										)}
+									&lt;/div&gt;
+								)
+							}
+						}
+						</code></pre>
+					</section>
+				</section>
 
 				<section>
 					<section>
@@ -283,6 +470,11 @@
 						<h3 class="header header--small">
 							Tworzenie nowego komponentu
 						</h3>
+						<pre>
+							<code class="bash" data-trim data-noescape>
+								git checkout task/1
+							</code>
+						</pre>
 					</section>
 					<section>
 						<h3 class="header header--small">
@@ -355,6 +547,11 @@
 						<h3 class="header header--small">
 							Tworzenie listy wiadomości
 						</h3>
+						<pre>
+							<code class="bash" data-trim data-noescape>
+								git checkout task/2
+							</code>
+						</pre>
 					</section>
 					<section>
 						<h3 class="header header--small">
@@ -386,6 +583,21 @@
 						</pre>
 						<aside class="notes">
 							Nalezy pamiętać o sprawdzaniu czy wiadomość nie jest pusta przy wysyłaniu oraz o wyczyszczeniu pola po wsyłaniu wiadomości. 
+						</aside>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodaj metodę <b>handleKeyPress</b>, która będzie dodawała<br>
+							wiadomości po naciśnięciu klawisza enter
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
+						</pre>
+						<aside class="notes">
+							if (event.key !== 'Enter') return;
+        					this.handleSend();
 						</aside>
 					</section>
 					<section>
@@ -482,6 +694,11 @@
 						<h3 class="header header--small">
 							Tworzenie komponentu wiadomości
 						</h3>
+						<pre>
+							<code class="bash" data-trim data-noescape>
+								git checkout task/3
+							</code>
+						</pre>
 					</section>
 					<section>
 						<h3 class="header header--small">
@@ -506,7 +723,7 @@
 						</h3>
 						<pre>
 						<code data-trim data-noescape class="javascript">
-							&lt;div key={index} className="message"&gt;
+							&lt;div className="message"&gt;
 								&lt;span className="message__author"&gt;
 									// autor wiadomości
 								&lt;/span&gt;
@@ -586,6 +803,7 @@
 						</h3>
 						<pre>
 							<code data-trim data-noescape>
+								import firebase from 'firebase';
 								import { firebaseConfig } from './config'
 
 								const firebaseApp = firebase.initializeApp(firebaseConfig);
@@ -660,12 +878,20 @@
 						<h3 class="header header--small">
 							Integracja aplikacji z firebase
 						</h3>
+						<pre>
+							<code class="bash" data-trim data-noescape>
+								git checkout task/4
+							</code>
+						</pre>
 					</section>
 					<section>
 						<h3 class="header header--small">
 							Dodanie w konstruktorze referencji do bazy danych:
 						</h3>
 						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code>
 						<code data-trim data-noescape class="javascript">
 							this.messageRef = firebase.database().ref().child('messages');
 						</code>
@@ -684,7 +910,7 @@
 					</section>
 					<section>
 						<h3 class="header header--small">
-							Dodanie metody <b>listenMessages</b> w pliku:
+							Dodanie metody <b>listenMessages</b>:
 						</h3>
 						<pre>
 						<code data-trim data-noescape class="javascript">
@@ -696,6 +922,140 @@
 											list: Object.values(message.val()),
 										});
 									});
+							}
+						</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3 class="header">
+							Zadanie 5
+						</h3>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Logowanie do aplikacji
+						</h3>
+						<pre>
+							<code class="bash" data-trim data-noescape>
+								git checkout task/5
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Sprawdzenie czy użytkownik jest zalogowany
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/App/App.js
+						</code> <code data-trim data-noescape class="javascript">
+						constructor(props) {
+							super(props);
+
+							this.state = {
+								user: null,
+							}
+						}
+
+						componentDidMount() {
+							firebase.auth().onAuthStateChanged(user => {
+								this.setState({ user });
+							});
+						}
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Dodanie przycisku logowania się do aplikacji<br>
+							i podpięcie akcji <b>handleSignIn</b>
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/App/App.js
+						</code> <code data-trim data-noescape class="javascript">
+						&lt;button 
+							className="app__button"
+							onClick={this.handleSignIn.bind(this)}
+							&gt;
+							Sign in
+						&lt;/button&gt;
+						</code> <code data-trim data-noescape class="javascript">
+						  handleSignIn() {
+								var provider = new firebase.auth.GoogleAuthProvider();
+								firebase.auth().signInWithPopup(provider);
+							}
+						</code>
+						</pre>
+					</section>
+
+					<section>
+						<h3 class="header header--small">
+							Dodanie przycisku wylogowania się z aplikacji<br>
+							i podpięcie akcji <b>handleLogOut</b>
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/App/App.js
+						</code> <code data-trim data-noescape class="javascript">
+						&lt;button 
+							className="app__button"
+							onClick={this.handleLogOut.bind(this)}
+							&gt;
+							Sign in
+						&lt;/button&gt;
+						</code> <code data-trim data-noescape class="javascript">
+						handleLogOut() {
+							firebase.auth().signOut();
+						}
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Zastosowanie dla przycisków renderowanie warunkowe
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/App/App.js
+						</code> <code data-trim data-noescape class="javascript">
+							{ !this.state.user ? (
+								// Button logowania
+							) : (
+								// Button wylogowania
+							)};
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Przekazanie informacji o użytkowniku do komponentu <b>Form</b>
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/App/App.js
+						</code> <code data-trim data-noescape class="javascript">
+          					&lt;Form user={this.state.user} /&gt;
+						</code>
+						</pre>
+					</section>
+					<section>
+						<h3 class="header header--small">
+							Wykorzystując cykl życia komponentu<br>
+							uaktualnij nazwę użytkownika
+						</h3>
+						<pre>
+						<code data-trim data-noescape class="javascript">
+							react-tutorial/src/components/Form/Form.js
+						</code> <code data-trim data-noescape class="javascript">
+							componentWillReceiveProps(nextProps) {
+								if(nextProps.user) {
+									console.log(nextProps.user);
+									// Ustaw nową nazwę użytkownika
+								}
 							}
 						</code>
 						</pre>

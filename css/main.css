@@ -120,7 +120,17 @@ body * {
     line-height: 1em;
 }
 
+.reveal .list--clear {
+    margin: 0 0 0 20px;
+    line-height: 1em;
+}
+
 .reveal .list li {
+    font-size: 0.4em;
+    font-weight: 300;
+}
+
+.reveal .paragraph--small {
     font-size: 0.4em;
     font-weight: 300;
 }
