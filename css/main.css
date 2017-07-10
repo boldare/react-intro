@@ -171,3 +171,7 @@ body * {
     font-weight: 300;
     font-size: 0.4em;
 }
+
+.raveal a.link {
+    color: rgba(0,0,0,1);
+}
